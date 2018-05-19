@@ -1,0 +1,29 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "jsonapi": { "$ref": "dataJsonAPI.json" },
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^clients"
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "client_id": { "$ref": "clientIdRegex.json" },
+            "name": { "type": "string", "minLength": 3, "maxLength": 12, "pattern": "^[a-zA-Z]{3,12}$" }
+          },
+          "required": [ "client_id", "name" ],
+          "additionalProperties": false
+        }
+      },
+      "required": [ "type", "attributes" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "jsonapi", "data" ],
+  "additionalProperties": false
+}
