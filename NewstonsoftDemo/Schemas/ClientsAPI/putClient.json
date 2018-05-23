@@ -8,7 +8,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "pattern": "^clients"
+          "pattern": "^clients$"
         },
         "id": { "$ref": "clientIdRegex.json" },
         "attributes": {
